@@ -24,7 +24,6 @@ jobs:
 
     - name: Wait for pods to be ready
       run: |
-        # This gives the container time to pull and start
         kubectl wait --for=condition=ready pod -l app=nodejs-app --timeout=90s
         kubectl get pods
         kubectl get services
